@@ -1,0 +1,51 @@
+### 권한 코드 방식 (Authorization Code flow)
+### 1. 브라우저에서 호출
+GET http://localhost:8080/oauth/authorize?response_type=code&client_id=foo&redirect_uri=http://localhost:8080/test/authorization-code&scope=read
+
+
+
+### 2 생성된 code로 Token 요청
+POST http://localhost:8080/oauth/token?grant_type=authorization_code&code=fBDjBd&scope=read&redirect_uri=http://localhost:8080/test/authorization-code
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic Zm9vOmJhcg==
+
+
+
+### 암묵적인 동의 방식 (Implicit Grant flow)
+### 1. 브라우저에서 호출
+GET http://user:test@localhost:8080/oauth/authorize?response_type=token&redirect_uri=http://localhost:8080&client_id=foo&scope=read
+### redirect_uri에 입력된 주소로 리다이렉트 되면서 해쉬태그에서 파라메터로 Access Token을 전달
+### 헤시토큰(#)으로 보내기 때문에 서버에서는 엑세스 토큰을 받지 못함. 프론트에서만 사용하도록 하는것을 권장
+http://localhost:8080/#access_token=0aa5710f-effe-4c33-81d6-a2cf2a3fffeb&token_type=bearer&expires_in=42649
+
+
+
+### 자원 소유자 비밀번호 (Resource Owner Password Credentials flow)
+POST http://localhost:8080/oauth/token?grant_type=password&client_id=foo&scope=read&username=user&password=test
+Authorization: Basic Zm9vOmJhcg==
+
+<> 2022-02-11T090100.200.json
+
+
+
+### 클라이언트 인증 플로우 (Client Credentials flow)
+### 리프레시토큰 발급 안됨
+POST http://localhost:8080/oauth/token?grant_type=client_credentials&scope=read
+Authorization: Basic Zm9vOmJhcg==
+
+
+
+### Refresh Token를 통한 Access Token 재발급
+POST http://localhost:8080/oauth/token?grant_type=refresh_token&scope=read&refresh_token=09a69a48-3363-4132-8963-c0c0898fbbcb
+Authorization: Basic Zm9vOmJhcg==
+
+
+
+### 발급된 토큰으로 API 호출
+GET http://localhost:8080/member
+Authorization: Bearer 27e6df2b-1358-4144-b8ad-c714b4d88856
+
+<> 2022-02-11T090148.404.json
+<> 2022-02-11T090136.404.json
+<> 2022-02-11T090127.404.json
+
