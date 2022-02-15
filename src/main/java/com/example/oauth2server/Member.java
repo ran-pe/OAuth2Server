@@ -1,4 +1,4 @@
-package com.example.api;
+package com.example.oauth2server;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,8 +16,8 @@ import java.io.Serializable;
 public class Member implements Serializable {
     @Id
     @GeneratedValue
-    Long id;
-    String name;
-    String username;
-    String remark;
+    private Long id;
+    private String name;
+    private String username;
+    private String remark;
 }

@@ -73,3 +73,14 @@ create table ClientDetails
     additionalInformation  VARCHAR(4096),
     autoApproveScopes      VARCHAR(256)
 );
+
+create table member (
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    name VARCHAR(256),
+    username VARCHAR(256),
+    remark VARCHAR(256)
+);
+
+insert into member values (null, 'ran', 'ranran', 'test');
+
+
