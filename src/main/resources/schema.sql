@@ -81,6 +81,4 @@ create table member (
     remark VARCHAR(256)
 );
 
-insert into member values (null, 'ran', 'ranran', 'test');
-
 
