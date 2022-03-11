@@ -22,7 +22,6 @@
     <name>OAuth2Server</name>
     <description>OAuth2Server</description>
 
-
     <properties>
         <java.version>1.8</java.version>
     </properties>
