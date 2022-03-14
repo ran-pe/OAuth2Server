@@ -42,8 +42,8 @@ Authorization: Basic Zm9vOmJhcg==
 
 
 ### 발급된 토큰으로 API 호출
-GET http://localhost:8080/members
-Authorization: Bearer 4e1f330d-a102-4b7e-a769-14e274f42e49
+GET http://localhost:8081/members
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDcyNjExMTMsInVzZXJfbmFtZSI6InVzZXIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiODI2MWNlNmItYzdhZC00NmU5LTljY2QtZWZhODNkODZkNjZiIiwiY2xpZW50X2lkIjoiZm9vIiwic2NvcGUiOlsicmVhZCJdfQ.cCV786cJmehP_zd6wvlKjyUCOxp04piwN567BiWeZg4
 
 <> 2022-02-11T090148.404.json
 <> 2022-02-11T090136.404.json
